@@ -1,0 +1,1 @@
+Add featured1-5.jpg and gallery1-4.jpg photos. Optimized for iPhone Safari and Android Chrome.
