@@ -33,19 +33,20 @@ body{
 
 /* HERO */
 
-.music-btn{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    z-index:9999;
-    background:#d98a9e;
-    color:white;
-    border:none;
-    border-radius:999px;
-    padding:12px 18px;
-    cursor:pointer;
-    font-weight:600;
-    box-shadow:0 4px 12px rgba(0,0,0,.15);
+.music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 999px;
+    background: #d98a9e;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,.15);
 }
 
 .hero{
@@ -547,6 +548,10 @@ iframe{
 <audio id="bgMusic" loop preload="auto">
     <source src="./video/amazing-grace.mp3" type="audio/mpeg">
 </audio>
+
+<button id="musicBtn" class="music-btn">
+    🎵 Play Music
+</button>
 <section class="hero">
 <div class="fade">
 <h1>Holy Baptism of<br>Maria Zeleora Dulce</h1>
@@ -913,16 +918,57 @@ m.innerText=Math.floor((x%3600000)/60000);
 s.innerText=Math.floor((x%60000)/1000);
 },1000);
 
-    const music = document.getElementById('bgMusic');
+const music = document.getElementById('bgMusic');
 const musicBtn = document.getElementById('musicBtn');
 
-musicBtn.addEventListener('click', () => {
-    if (music.paused) {
-        music.play();
+// Hide button initially
+musicBtn.style.display = 'none';
+
+// Try autoplay
+window.addEventListener('load', async () => {
+    try {
+        await music.play();
+
+        // Autoplay succeeded
+        musicBtn.style.display = 'block';
         musicBtn.textContent = '🔇 Pause Music';
-    } else {
-        music.pause();
-        musicBtn.textContent = '🎵 Music';
+
+    } catch (error) {
+
+        // Browser blocked autoplay
+        musicBtn.style.display = 'block';
+        musicBtn.textContent = '🎵 Play Music';
+
+        // First user interaction will start music
+        const startMusic = async () => {
+            try {
+                await music.play();
+                musicBtn.textContent = '🔇 Pause Music';
+            } catch (e) {
+                console.log(e);
+            }
+
+            document.removeEventListener('click', startMusic);
+            document.removeEventListener('touchstart', startMusic);
+        };
+
+        document.addEventListener('click', startMusic, { once: true });
+        document.addEventListener('touchstart', startMusic, { once: true });
+    }
+});
+
+// Manual Play / Pause Button
+musicBtn.addEventListener('click', async () => {
+    try {
+        if (music.paused) {
+            await music.play();
+            musicBtn.textContent = '🔇 Pause Music';
+        } else {
+            music.pause();
+            musicBtn.textContent = '🎵 Play Music';
+        }
+    } catch (e) {
+        console.log(e);
     }
 });
 </script>
