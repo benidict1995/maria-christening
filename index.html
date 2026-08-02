@@ -544,7 +544,7 @@ iframe{
 </head>
 <body>
 <div id="petals"></div>
-<audio id="bgMusic" loop> <source src="./video/amazing-grace.mp3" type="audio/mpeg"> </audio> <button id="musicBtn"class="music-btn"> 🎵 Music </button>
+<audio id="bgMusic" autoplay muted loop> <source src="./video/amazing-grace.mp3" type="audio/mpeg"> </audio> <button id="musicBtn"class="music-btn"> 🎵 Music </button>
 <section class="hero">
 <div class="fade">
 <h1>Holy Baptism of<br>Maria Zeleora Dulce</h1>
@@ -883,5 +883,18 @@ h.innerText=Math.floor((x%86400000)/3600000);
 m.innerText=Math.floor((x%3600000)/60000);
 s.innerText=Math.floor((x%60000)/1000);
 },1000);
+
+    const music = document.getElementById('bgMusic');
+const musicBtn = document.getElementById('musicBtn');
+
+musicBtn.addEventListener('click', () => {
+    if (music.paused) {
+        music.play();
+        musicBtn.textContent = '🔇 Pause Music';
+    } else {
+        music.pause();
+        musicBtn.textContent = '🎵 Music';
+    }
+});
 </script>
 </body></html>
