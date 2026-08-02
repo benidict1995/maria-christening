@@ -247,6 +247,64 @@ section{
     }
 }
 
+    .gift-card {
+    padding: 20px;
+    text-align: center;
+}
+
+.gift-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 12px;
+}
+
+.gift-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.gift-gallery img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.gift-gallery img:hover {
+    transform: scale(1.05);
+}
+
+.product-name {
+    margin-top: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #666;
+}
+
+.gift-card h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.gift-card p {
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .gift-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gift-gallery img {
+        height: 180px;
+    }
+}
+
 /* FADE ANIMATION */
 
 .fade{
@@ -502,58 +560,125 @@ iframe{
 </div>
 
 <h2>🎁 Maria's Little Wishlist</h2>
+<section id="gift-registry">
+    <h2>🎁 Gift Registry</h2>
+    <p class="gift-intro">
+        Your presence is the greatest gift of all. If you wish to bless Maria with a gift,
+        here are some items that would be greatly appreciated.
+    </p>
 
-<div class="grid">
+    <div class="grid">
 
-    <div class="card gift-card">
-        <img src="img/diaper.jpg" alt="Diapers" class="gift-image">
-        <h3>🚼 Diapers (L & XL Sizes)</h3>
-        <p>
-            A thoughtful and practical gift to help keep our little one comfortable as they grow.
-        </p>
+        <!-- Educational Toys -->
+        <div class="card gift-card">
+            <img src="img/toys.jpg" alt="Educational Toys" class="gift-image">
+            <h3>🧸 Educational Toys</h3>
+            <p>
+                Helping tiny hands learn, explore, and discover the world.
+            </p>
+        </div>
+
+        <!-- Baby Books -->
+        <div class="card gift-card">
+            <img src="img/books.jpg" alt="Baby Books" class="gift-image">
+            <h3>📚 Baby Books</h3>
+            <p>
+                Every great adventure begins with a bedtime story.
+            </p>
+        </div>
+
+        <!-- Diapers -->
+        <div class="card gift-card">
+            <div class="gift-gallery">
+                <div>
+                    <img src="img/diaper-l.jpg" alt="Diaper L Size">
+                    <p class="product-name">L Size</p>
+                </div>
+
+                <div>
+                    <img src="img/diaper-xl.jpg" alt="Diaper XL Size">
+                    <p class="product-name">XL Size</p>
+                </div>
+            </div>
+
+            <h3>🚼 Diapers</h3>
+            <p>
+                L & XL sizes are warmly appreciated as our little one continues to grow.
+            </p>
+        </div>
+
+        <!-- Wet Wipes -->
+        <div class="card gift-card">
+            <div class="gift-gallery">
+                <div>
+                    <img src="img/wet-wipes-1.jpg" alt="Wet Wipes Brand 1">
+                    <p class="product-name">Brand 1</p>
+                </div>
+
+                <div>
+                    <img src="img/wet-wipes-2.jpg" alt="Wet Wipes Brand 2">
+                    <p class="product-name">Brand 2</p>
+                </div>
+            </div>
+
+            <h3>🧻 Wet Wipes</h3>
+            <p>
+                A daily essential that helps keep our little one fresh, clean, and happy.
+            </p>
+        </div>
+
+        <!-- Dry Wipes -->
+        <div class="card gift-card">
+            <div class="gift-gallery">
+                <div>
+                    <img src="img/dry-wipes-1.jpg" alt="Dry Wipes Brand 1">
+                    <p class="product-name">Brand 1</p>
+                </div>
+
+                <div>
+                    <img src="img/dry-wipes-2.jpg" alt="Dry Wipes Brand 2">
+                    <p class="product-name">Brand 2</p>
+                </div>
+            </div>
+
+            <h3>🤍 Dry Wipes</h3>
+            <p>
+                Soft, versatile, and always useful for our baby's everyday care.
+            </p>
+        </div>
+
+        <!-- Baby Care Essentials -->
+        <div class="card gift-card">
+            <div class="gift-gallery">
+                <div>
+                    <img src="img/baby-wash.jpg" alt="Baby Wash">
+                    <p class="product-name">Baby Wash</p>
+                </div>
+
+                <div>
+                    <img src="img/baby-lotion.jpg" alt="Baby Lotion">
+                    <p class="product-name">Baby Lotion</p>
+                </div>
+
+                <div>
+                    <img src="img/baby-powder.jpg" alt="Baby Powder">
+                    <p class="product-name">Baby Powder</p>
+                </div>
+
+                <div>
+                    <img src="img/rash-cream.jpg" alt="Rash Cream">
+                    <p class="product-name">Rash Cream</p>
+                </div>
+            </div>
+
+            <h3>🍼 Baby Care Essentials</h3>
+            <p>
+                Baby wash, lotion, powder, rash cream, and other care essentials are warmly appreciated.
+            </p>
+        </div>
+
     </div>
-
-    <div class="card gift-card">
-        <img src="img/wet-wipes.jpg" alt="Wet Wipes" class="gift-image">
-        <h3>🧻 Wet Wipes</h3>
-        <p>
-            A daily essential that helps keep our little one fresh, clean, and happy.
-        </p>
-    </div>
-
-    <div class="card gift-card">
-        <img src="img/dry-wipes.jpg" alt="Dry Wipes" class="gift-image">
-        <h3>🤍 Dry Wipes</h3>
-        <p>
-            Soft, versatile, and always useful for our baby's everyday care.
-        </p>
-    </div>
-
-    <div class="card gift-card">
-        <img src="img/baby-care.jpg" alt="Baby Care Essentials" class="gift-image">
-        <h3>🍼 Baby Care Essentials</h3>
-        <p>
-            Baby wash, lotion, powder, rash cream, and other care essentials are warmly appreciated.
-        </p>
-    </div>
-
-    <div class="card gift-card">
-        <img src="img/toys.jpg" alt="Educational Toys" class="gift-image">
-        <h3>🧸 Educational Toys</h3>
-        <p>
-            Helping tiny hands learn, explore, and discover the world.
-        </p>
-    </div>
-
-    <div class="card gift-card">
-        <img src="img/books.jpg" alt="Baby Books" class="gift-image">
-        <h3>📚 Baby Books</h3>
-        <p>
-            Every great adventure begins with a bedtime story.
-        </p>
-    </div>
-
-</div>
+</section>
 
 </section>
 
