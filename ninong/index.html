@@ -479,6 +479,83 @@ iframe{
     cursor: pointer;
 }
 
+    .godparent-letter {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.letter-paper {
+    max-width: 700px;
+    background: #fffdf9;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 1px solid rgba(212,175,55,0.25);
+    position: relative;
+    overflow: hidden;
+}
+
+.letter-paper::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 15px;
+    pointer-events: none;
+}
+
+.letter-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.letter-header span {
+    font-size: 28px;
+}
+
+.letter-header h3 {
+    margin-top: 10px;
+    font-size: 28px;
+    color: #9a7b4f;
+    font-family: 'Playfair Display', serif;
+}
+
+.letter-content {
+    color: #555;
+    line-height: 2;
+    text-align: center;
+    font-size: 17px;
+}
+
+.letter-content p {
+    margin-bottom: 18px;
+}
+
+.question {
+    font-size: 24px;
+    font-weight: 600;
+    color: #b88a44;
+    font-family: 'Playfair Display', serif;
+    margin: 35px 0;
+}
+
+.letter-signature {
+    margin-top: 40px;
+}
+
+.letter-signature p {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.letter-signature h4 {
+    font-size: 26px;
+    color: #9a7b4f;
+    font-family: 'Great Vibes', cursive;
+    font-weight: normal;
+}
+
 
 /* MOBILE */
 
@@ -551,30 +628,43 @@ iframe{
 </div>
 </section>
 
- <p>To My Godparent-to-Be</p><br>
+<div class="godparent-letter">
+    <div class="letter-paper">
 
-<p>I’m still too little to write this on my own, so Mommy and Daddy are helping me.</p><br>
+        <div class="letter-header">
+            <span>💌</span>
+            <h3>To My Godparent-to-Be</h3>
+        </div>
 
-<p>They’ve been thinking and praying about the people who will help guide me as I grow in faith, kindness, and love.</p><br>
+        <div class="letter-content">
+            <p>I’m still too little to write this on my own, so Mommy and Daddy are helping me.</p>
 
-<p>When they thought of someone special…</p><br>
+            <p>They’ve been thinking and praying about the people who will help guide me as I grow in faith, kindness, and love.</p>
 
-<p>They thought of you.</p><br>
+            <p>When they thought of someone special…</p>
 
-<p>My Mommy and Daddy chose you because they believe you’ll be someone I can look up to—not only today, but for many years to come.</p><br>
+            <p><strong>They thought of you.</strong></p>
 
-<p>So before I learn my first words…</p><br>
+            <p>My Mommy and Daddy chose you because they believe you’ll be someone I can look up to—not only today, but for many years to come.</p>
 
-<p>Before I take my first steps…</p><br>
+            <p>So before I learn my first words…</p>
 
-<p>I’d love to ask you my very first big question…</p><br>
+            <p>Before I take my first steps…</p>
 
-<p>Will you do me the honor of being my Ninong/Ninang? </p><br>
+            <p>I’d love to ask you my very first big question…</p>
 
-<p>With tiny hugs and lots of love,</p><br>
+            <p class="question">
+                Will you do me the honor of being my Ninong/Ninang?
+            </p>
 
-<p>Maria Zeleora 🤍</p>
- </p>
+            <div class="letter-signature">
+                <p>With tiny hugs and lots of love,</p>
+                <h4>Maria Zeleora 🤍</h4>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 <footer
 style="
